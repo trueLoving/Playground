@@ -6,11 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Playground</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .playground {
+      margin: 20px;
+      height: 800px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .playground>.left {
+      border: 1px dashed black;
+    }
+
+    .playground>.right {
+      border: 1px dashed black;
+    }
+  </style>
 </head>
 
 <body>
   <h1>Hello Playground</h1>
-  <script src="./src/main.js" type="module"></script>
+  <div class="playground">
+    <div class="left">
+    </div>
+    <div class="right"></div>
+  </div>
 </body>
 
 </html>
