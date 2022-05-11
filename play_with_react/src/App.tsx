@@ -1,28 +1,15 @@
-import { useState } from "react";
-import "./App.css";
+import { Component } from "react";
+import "./App.less";
+import RotateCard from "./components/RotateCard";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  const hello = () => {
-    alert("hello world")
-  };
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-          <button type="button" onClick={hello}>
-            hello world
-          </button>
-        </p>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    const result = [];
+    for (let i = 0; i < 43; i++) {
+      result.push(<RotateCard />);
+    }
+    return <div className="layout">{result}</div>;
+  }
 }
 
 export default App;

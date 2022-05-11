@@ -4,6 +4,7 @@ Play with Vite
 - [React Docs](https://reactjs.org/)
 - [Vite Docs](https://vitejs.dev/)
 - [webgradients](https://webgradients.com/)
+- [less](https://lesscss.org/)
 
 Use vite to create react app
 
@@ -11,7 +12,18 @@ Use vite to create react app
 npm create vite@latest
 ```
 
+Add `less` to support less
+
+```sh
+npm i less -D
+```
+
 React Component
 
 > state component(render UI by data)
 > stateless component
+
+
+References
+
+- [The Complete Modern React Developer 2022](https://andrewbaisden.hashnode.dev/the-complete-modern-react-developer-2022)
