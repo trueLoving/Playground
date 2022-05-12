@@ -23,6 +23,10 @@ React Component
 > state component(render UI by data)
 > stateless component
 
+Component Communication
+
+Parent --> Child (props)
+Child --> Parent (callback function)
 
 References
 
