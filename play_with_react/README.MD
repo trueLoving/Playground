@@ -23,6 +23,17 @@ React Component
 > state component(render UI by data)
 > stateless component
 
+```ts
+
+type PropsType = {}
+type StateType = {}
+
+class C extends React.Component<PropsType, StateType> {
+  //... TODO
+}
+
+```
+
 Component Communication
 
 Parent --> Child (props)
