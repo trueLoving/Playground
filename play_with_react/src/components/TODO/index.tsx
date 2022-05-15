@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 
+type ToDoListItemType = {
+  id: number;
+  title: string;
+  done?: boolean;
+};
+
 type PropType = {
   id: number;
   title: string;
@@ -8,20 +14,20 @@ type PropType = {
 };
 
 type StateType = {
-  title: string;
+  item: ToDoListItemType;
 };
 
 class ToDoListListItem extends Component<PropType, StateType> {
   constructor(props: PropType) {
     super(props);
     this.state = {
-      title: props.title,
+      item: props,
     };
   }
   render() {
     return (
       <div className="todo-list-item">
-        <h1>{this.state.title}</h1>
+        <h1>{this.state.item.title}</h1>
         <button
           onClick={() => {
             this.props.deleteItem(this.props.id);
@@ -34,38 +40,62 @@ class ToDoListListItem extends Component<PropType, StateType> {
   }
 }
 
-class ToDoList extends Component<{ count?: number }, { count: number }, any> {
+const mockData = [
+  {
+    id: 1,
+    title: "hello world 123",
+    done: false,
+  },
+  {
+    id: 2,
+    title: "hello world 456",
+    done: false,
+  },
+];
+
+class ToDoList extends Component<
+  { count?: number },
+  { list: ToDoListItemType[] },
+  any
+> {
   constructor(props: any) {
     super(props);
     this.state = {
-      count: props.count || 10,
+      list: mockData,
     };
   }
 
   addItem() {
-    const count = this.state.count;
+    const list = this.state.list;
+    list.push({
+      id: Math.random(),
+      title: "todo",
+    });
     this.setState({
-      count: this.state.count + 1,
+      list: list,
     });
   }
 
   deleteItem(id: number) {
-    console.log("xxxxxx", id);
+    // console.log("xxxxxx", id);
+    const list = this.state.list;
+    const delete_index = list.findIndex((item) => item.id === id);
+    list.splice(delete_index, 1);
+    this.setState({
+      list,
+    });
   }
 
   render() {
-    const result = [];
-
-    for (let i = 0; i < this.state.count; i++) {
-      result.push(
+    const result = this.state.list.map((item, i) => {
+      return (
         <ToDoListListItem
           key={i}
-          title={`hello world ${i}`}
-          id={i}
-          deleteItem={this.deleteItem}
+          {...item}
+          deleteItem={this.deleteItem.bind(this)}
         />
       );
-    }
+    });
 
     return (
       <div className="todo-list">
