@@ -1,10 +1,10 @@
-Play with React
-Play with Vite
+Play with React/Vite
 
 - [React Docs](https://reactjs.org/)
 - [Vite Docs](https://vitejs.dev/)
 - [webgradients](https://webgradients.com/)
 - [less](https://lesscss.org/)
+
 
 Use vite to create react app
 
@@ -21,7 +21,9 @@ npm i less -D
 React Component
 
 > state component(render UI by data)
+> 
 > stateless component
+
 
 ```ts
 
@@ -37,6 +39,7 @@ class C extends React.Component<PropsType, StateType> {
 Component Communication
 
 Parent --> Child (props)
+
 Child --> Parent (callback function)
 
 References
