@@ -1,17 +1,25 @@
+import { Button } from "antd";
 import { Component } from "react";
 import "./App.less";
-import RotateCard from "./components/RotateCard";
-import ToDoList from "./components/TODO/index";
+import axios from "axios";
 
 class App extends Component {
+  test() {
+    console.log("hello world");
+    axios
+      .get("https://api.github.com/users/trueLoving")
+      .then((res) => {
+        console.log("res", res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   render() {
-    const result = [];
-    for (let i = 0; i < 43; i++) {
-      result.push(<RotateCard />);
-    }
     return (
       <div className="layout">
-        <ToDoList count={3}/>
+        <Button onClick={this.test.bind(this)}>Hello World</Button>
       </div>
     );
   }

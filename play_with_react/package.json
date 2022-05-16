@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd": "^4.20.5",
+    "axios": "^0.27.2",
     "mac-scrollbar": "^0.10.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
