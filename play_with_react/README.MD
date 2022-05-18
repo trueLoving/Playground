@@ -43,6 +43,11 @@ Parent --> Child (props)
 
 Child --> Parent (callback function)
 
+状态管理
+
+1. hooks
+2. redux
+
 References
 
 - [The Complete Modern React Developer 2022](https://andrewbaisden.hashnode.dev/the-complete-modern-react-developer-2022)
