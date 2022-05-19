@@ -8,6 +8,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import React from "react";
+import Counter from "./components/Counter";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -45,11 +46,19 @@ const items: MenuItem[] = [
 class App extends React.Component {
   state = {
     collapsed: false,
+    count: 1,
   };
 
   onCollapse = (collapsed: boolean) => {
     console.log(collapsed);
     this.setState({ collapsed });
+  };
+
+  onIncrement = () => {
+    const count = this.state.count;
+    this.setState({
+      count: count + 1,
+    });
   };
 
   render() {
@@ -72,12 +81,11 @@ class App extends React.Component {
               <Breadcrumb.Item>User</Breadcrumb.Item>
               <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
-            <div
-              className="site-layout-background"
-              style={{ padding: 24, minHeight: 360 }}
-            >
-              Bill is a cat.
-            </div>
+            <Counter
+              label="label"
+              count={this.state.count}
+              onIncrement={() => this.onIncrement()}
+            ></Counter>
           </Content>
           <Footer style={{ textAlign: "center" }}>
             Ant Design ©2018 Created by Ant UED
