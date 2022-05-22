@@ -2,3 +2,4 @@
 - [gitignore](https://github.com/github/gitignore)
 - [play_with_react](./play_with_react/)
 - [play_with_websocket](./play_with_websocket/)
+- [play_with_rust](./play_with_rust/)
