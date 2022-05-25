@@ -1,4 +1,5 @@
 - [git submodule](https://www.cnblogs.com/jyroy/p/14367776.html)
+- [husky](https://github.com/typicode/husky)
 - [gitignore](https://github.com/github/gitignore)
 - [play_with_react](./play_with_react/)
 - [play_with_websocket](./play_with_websocket/)
