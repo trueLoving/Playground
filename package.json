@@ -1,0 +1,29 @@
+{
+  "name": "playground",
+  "version": "0.0.1",
+  "description": "Playground",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trueLoving/Playground.git"
+  },
+  "keywords": [
+    "Playground"
+  ],
+  "scripts": {
+    "prepare": "husky install && husky add .husky/pre-commit 'npm run precommit'",
+    "precommit": "node scripts/verifyCommit.js $1"
+  },
+  "author": "trueLoving",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trueLoving/Playground/issues"
+  },
+  "homepage": "https://github.com/trueLoving/Playground#readme",
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "husky": "^8.0.1"
+  }
+}
